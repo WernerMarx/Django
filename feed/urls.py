@@ -4,5 +4,5 @@ from .views import HomePageView
 app_name = 'feed'
 
 urlpatterns = [
-    path('', RenderSomeView, name='index'),
+    path('', HomePageView.as_view(), name='index'),
 ]
