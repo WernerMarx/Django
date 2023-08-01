@@ -7,10 +7,12 @@
 
 {% block body %}
     {% for post in posts %}
-        {{ post.text }}<br>
-        {% thumbnail post.image "200x200" crop="center" as im %}
-            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-        {% endthumbnail %}
+        <a href="{% url 'feed:detail' post.id %}" style="display: inline-block;">
+            {{ post.text }} <br>
+            {% thumbnail post.image "200x200" crop="center" as im %}
+                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+            {% endthumbnail %}
+        </a>
         <hr>
     {% endfor %}
 {% endblock body %}

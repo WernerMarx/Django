@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+%{% block body %}
+    <a href="{% url 'feed:index' %}">&larr; Go back</a>
+    <h3>Text</h3>
+    {{ object }}
+    <h3>Image</h3>
+    <img src="{{ object.image.url }}" alt="image">
+{% endblock body %}
