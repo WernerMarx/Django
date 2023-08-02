@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Upload form
+{% endblock title %}
+
+{% block body %}
+    <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <button type="submit">Submit form</button>
+            <a href="{% url 'feed:index' %}">Cancel</a>
+        </div>
+{% endblock body %}

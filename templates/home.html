@@ -6,6 +6,9 @@
 {% endblock title %}
 
 {% block body %}
+    <div style="margin-bottom: 10px;">
+        <a href="{% url 'feed:post' %}">Create new post &rarr;</a>
+    </div>
     {% for post in posts %}
         <a href="{% url 'feed:detail' post.id %}" style="display: inline-block;">
             {{ post.text }} <br>
