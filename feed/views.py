@@ -35,3 +35,4 @@ class AddPostView(FormView):
         )
         messages.add_message(self.request, messages.SUCCESS, 'Post success')
         return super().form_valid(form)
+    
