@@ -12,17 +12,16 @@
     />
   </head>
   <body>
-    {% if messages %}
-    <ul class="messages">
-      {% for message in messages %}
-      <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
-        {{ message }}
-      </li>
-      {% endfor %}
-    </ul>
-    {% endif %}
-
+    
     {% include "includes/navbar.html" %}
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="bg-{% if message.tags %}{{ message.tags }}{% else %}success{% endif %} bg-gradient text-white py-4 text-center">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
 
     <div class="container">
     {% block body %} {% endblock body %}

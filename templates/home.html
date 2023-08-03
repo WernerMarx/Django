@@ -8,7 +8,7 @@
 {% block body %}
     <div class="row">
         {% for post in posts %}
-            <div class="col-sm-6 col-md-3 my-3">
+            <div class="col-sm-6 my-3 col-md-3">
                 <div class="card" style="width: 18rem;">
                     {% thumbnail post.image "200x200" crop="center" as im %}
                         <img src="{{ im.url }}" class="card-img-top" alt="image">
